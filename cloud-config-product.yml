@@ -1,0 +1,64 @@
+#注意，如果是在记事本上编写，下面的缩进不要使用Tab来缩进，不然会报错
+spring:
+  profiles:
+    active: dev   #激活开发环境配置
+
+---
+server:
+  port: 8001
+mybatis:
+  config-location: classpath:mybatis/mybatis.cft.xml   #mybatis配置文件所在的路径
+  type-handlers-package: com.xy.springcloud.entiy            #所有Entiy别名类所在的包位置
+  mapper-locations: classpath:mybatis/mapper/**/*.xml    #mapper映射文件
+spring:
+  application:
+  profiles: dev
+    name: cloud-product
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource     #当前数据源的操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver       #  mysql  驱动包
+    url: jdbc:mysql://127.0.0.1:3306/springcloud_db01?serverTimezone=GMT%2B8
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5                               #数据库连接池最小维持连接数
+      initial-size: 5                           #初始化连接数
+      max-total: 5                              #最大连接数
+      max-wait-millis: 150                      #数据库连接等待连接数
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:7000/eureka
+      
+      
+-------
+
+server:
+  port: 8001
+mybatis:
+  config-location: classpath:mybatis/mybatis.cft.xml   #mybatis配置文件所在的路径
+  type-handlers-package: com.xy.springcloud.entiy            #所有Entiy别名类所在的包位置
+  mapper-locations: classpath:mybatis/mapper/**/*.xml    #mapper映射文件
+spring:
+  application:
+  profiles: prod
+    name: cloud-product
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource     #当前数据源的操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver       #  mysql  驱动包
+    url: jdbc:mysql://127.0.0.1:3306/springcloud_db01?serverTimezone=GMT%2B8
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5                               #数据库连接池最小维持连接数
+      initial-size: 5                           #初始化连接数
+      max-total: 5                              #最大连接数
+      max-wait-millis: 150                      #数据库连接等待连接数
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:7000/eureka
