@@ -6,14 +6,14 @@ spring:
 ---
 server:
   port: 8001
-mybatis:
+ mybatis:
   config-location: classpath:mybatis/mybatis.cft.xml   #mybatis配置文件所在的路径
   type-handlers-package: com.xy.springcloud.entiy            #所有Entiy别名类所在的包位置
   mapper-locations: classpath:mybatis/mapper/**/*.xml    #mapper映射文件
-spring:
+ spring:
   application:
-  profiles: dev
     name: cloud-product
+  profiles: dev
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource     #当前数据源的操作类型
     driver-class-name: com.mysql.jdbc.Driver       #  mysql  驱动包
@@ -31,10 +31,8 @@ eureka:
     fetch-registry: true
     serviceUrl:
       defaultZone: http://localhost:7000/eureka
-      
-      
--------
 
+---
 server:
   port: 8001
 mybatis:
@@ -43,8 +41,8 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/**/*.xml    #mapper映射文件
 spring:
   application:
-  profiles: prod
     name: cloud-product
+  profiles: prod
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource     #当前数据源的操作类型
     driver-class-name: com.mysql.jdbc.Driver       #  mysql  驱动包
