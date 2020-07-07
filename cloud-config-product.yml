@@ -11,9 +11,9 @@ mybatis:
   type-handlers-package: com.xy.springcloud.entiy            #所有Entiy别名类所在的包位置
   mapper-locations: classpath:mybatis/mapper/**/*.xml    #mapper映射文件
 spring:
+  profiles: dev #开发环境
   application:
-    name: cloud-product-dev
-  profiles: dev
+    name: cloud-product
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource     #当前数据源的操作类型
     driver-class-name: com.mysql.jdbc.Driver       #  mysql  驱动包
@@ -41,7 +41,7 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/**/*.xml    #mapper映射文件
 spring:
   application:
-    name: cloud-product-prod
+    name: cloud-product
   profiles: prod
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource     #当前数据源的操作类型
