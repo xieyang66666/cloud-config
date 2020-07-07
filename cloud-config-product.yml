@@ -16,8 +16,8 @@ spring:
     name: cloud-product
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource     #当前数据源的操作类型
-    driver-class-name: com.mysql.jc.jdbc.Driver       #  mysql  驱动包
-    url: jdbc:mysql://127.0.0.1:3306/springcloud_db01?serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver       #  mysql  驱动包
+    url: jdbc:mysql://127.0.0.1:3306/springcloud_db01?serverTimezone=UTC&?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: root
     dbcp2:
@@ -45,8 +45,8 @@ spring:
   profiles: prod
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource     #当前数据源的操作类型
-    driver-class-name: com.mysql.jc.jdbc.Driver       #  mysql  驱动包
-    url: jdbc:mysql://127.0.0.1:3306/springcloud_db01?serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver       #  mysql  驱动包
+    url: jdbc:mysql://127.0.0.1:3306/springcloud_db01?serverTimezone=UTC&?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: root
     dbcp2:
