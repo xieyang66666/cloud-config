@@ -16,7 +16,7 @@ spring:
     name: cloud-product
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource     #当前数据源的操作类型
-    driver-class-name: com.mysql.jdbc.Driver       #  mysql  驱动包
+    driver-class-name: com.mysql.jc.jdbc.Driver       #  mysql  驱动包
     url: jdbc:mysql://127.0.0.1:3306/springcloud_db01?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
     password: root
@@ -45,7 +45,7 @@ spring:
   profiles: prod
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource     #当前数据源的操作类型
-    driver-class-name: com.mysql.jdbc.Driver       #  mysql  驱动包
+    driver-class-name: com.mysql.jc.jdbc.Driver       #  mysql  驱动包
     url: jdbc:mysql://127.0.0.1:3306/springcloud_db01?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
     password: root
